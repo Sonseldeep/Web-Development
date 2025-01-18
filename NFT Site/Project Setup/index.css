@@ -1,0 +1,109 @@
+/* ------------------------ UNIVERSAL SELECTOR ------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------ GLOBAL SELECTOR ------------------------ */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400, 500;
+  font-size: 16px;
+  color: #2b283a;
+}
+
+/* ------------------------ TOPOGRAPHY ------------------------ */
+
+h1 {
+  color: whitesmoke;
+  font-size: 36px;
+}
+h2 {
+  letter-spacing: -1px;
+}
+h3 {
+  color: #d0aaff;
+  font-size: 20px;
+}
+/* ------------------------ LAYOUT ------------------------ */
+
+header,
+section,
+footer {
+  padding: 45px 0;
+}
+header,
+.second-container {
+  background-color: #5f29a3;
+}
+
+.second-container {
+  color: whitesmoke;
+}
+.second-container p {
+  line-height: 23px;
+}
+
+.container {
+  width: 620px;
+  margin: 0 auto;
+}
+.main-img {
+  width: 100%;
+}
+.feature-image {
+  width: 300px;
+  border-radius: 4.6px;
+}
+.section-2-image-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  text-align: center;
+  color: #5f29a3;
+}
+
+/* ------------------------ LINK SELECTOR ------------------------ */
+
+a {
+  color: #ef5839;
+  text-decoration: dotted underline;
+}
+a:hover,
+a:active {
+  color: #d4b44c;
+}
+
+.btn {
+  padding: 10px 19px;
+  border-radius: 4.6px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 3px;
+}
+
+.btn-dark {
+  background-color: #5f29a3;
+  color: whitesmoke;
+}
+
+.btn-mid {
+  background-color: #f0e0ff;
+  color: #5f29a3;
+}
+.btn-light {
+  background-color: whitesmoke;
+  color: #5f29a3;
+}
+
+.btn:hover,
+.btn:hover {
+  background-color: #f3e885;
+  color: #2b283a;
+}
