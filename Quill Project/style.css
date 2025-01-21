@@ -1,0 +1,27 @@
+h2 {
+  line-height: 3;
+  letter-spacing: -2.5px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a:link,
+a:visited {
+  color: blue;
+}
+
+a:hover,
+a:active {
+  color: darkblue;
+}
+
+.btn:link,
+.btn:visited {
+  color: blue;
+}
+.btn:hover,
+.btn:active {
+  color: darkblue;
+}
