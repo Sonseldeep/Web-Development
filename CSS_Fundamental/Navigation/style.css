@@ -47,6 +47,7 @@ header {
   background: #f8f8f8;
   padding: 2em 0;
 }
+
 @media (max-width: 675px) {
   .container-nav {
     flex-direction: column;
