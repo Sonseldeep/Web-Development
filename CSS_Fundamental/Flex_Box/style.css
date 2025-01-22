@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #2c73d2;
+  color: #fff;
+  text-align: center;
+}
+
+.flex-container {
+  border: 10px solid #f9f871;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.25em;
+
+  display: flex;
+  /* align-items: flex-start; */
+  height: 50vh;
+}
+
+.flex-item {
+  background: #8bee86;
+  margin: 0.5em;
+  padding: 0.5em;
+  color: #424656;
+
+  width: 200px;
+}
+
+.flex-item-1 {
+  background: plum;
+  align-self: center;
+}
+
+.flex-item-2 {
+  align-self: flex-end;
+}
+
+.flex-item-3 {
+  align-self: flex-start;
+}
