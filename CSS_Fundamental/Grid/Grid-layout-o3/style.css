@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  grid-template: repeat(4, 1fr);
+  gap: 0.5em;
+}
+
+.grid-item {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9em;
+  font-size: 30px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.tech {
+  background-color: gold;
+  grid-column: span 4;
+}
+.env {
+  background-color: lightblue;
+  grid-column: span 2;
+}
+.phy {
+  background-color: lightcoral;
+  grid-column: span 2;
+}
+.nasa {
+  background-color: lightcyan;
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.health {
+  background-color: lightseagreen;
+  grid-column: span 4;
+}

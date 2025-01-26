@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.grid-container {
+  display: grid;
+  /* grid-template: 1fr 2fr 1fr/1fr 2fr; */
+  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: black;
+  padding: 0.5em;
+}
+
+header {
+  background-color: palegoldenrod;
+
+  grid-column: span 3;
+}
+
+nav,
+main {
+  grid-row: span 3;
+}
+
+nav {
+  background-color: lightcoral;
+  grid-column: span 1;
+}
+main {
+  background-color: lightgreen;
+  grid-column: span 2;
+}
+
+footer {
+  background-color: gold;
+  grid-column: span 3;
+}
