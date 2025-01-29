@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body>
+    <!--  always divide grid into 12 parts and every layout can be done with col and sol span 8 -->
+    <div class="grid gap-4 m-4 sm:grid-cols-12">
+      <div
+        class="sm:block hidden bg-gray-500 min-h-[100px] rounded-lg sm:col-span-2"
+      ></div>
+      <div class="bg-orange-400 rounded-lg min-h-[100px] sm:col-span-8"></div>
+      <div
+        class="sm:block hidden bg-green-500 min-h-[100px] rounded-lg shadow sm:col-span-2"
+      ></div>
+    </div>
+  </body>
+</html>
