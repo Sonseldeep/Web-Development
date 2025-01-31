@@ -2,6 +2,11 @@
 // array ma use hunxa
 // euta naya array return garxa
 
+// map ra filter maa ke xa ta Difference:
+// map => sabai return garxa (same size as parent)
+// filter => item reduce garxa selection
+// filter => (size smaller then paren garauna xa vane use garne)
+
 var arr = [1, 2, 3, 4, 5];
 
 //map: each  element maa kei  garne and naya element maa rakhne
