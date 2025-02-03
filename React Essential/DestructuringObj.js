@@ -38,3 +38,7 @@ var [val, def] = obj4;
 // val = 10;
 //  def = function(){} hunxa
 console.log(val);
+
+// note: ,, : skip garxa bich ko lai [between part is skipped]
+var array = [12, function () {}, 13];
+const [value, , thirteen] = array;
