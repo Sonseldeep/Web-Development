@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "./Components/Card";
 import { useState } from "react";
 import Array_Of_Obj from "./Components/Array_Of_Obj";
 import Array_Addition from "./Components/Array_Addition";
@@ -18,6 +19,7 @@ const App = () => {
 
   return (
     <>
+      <Card />
       <Array_Of_Obj />
       <Array_Addition />
       <Remove_in_Array />
