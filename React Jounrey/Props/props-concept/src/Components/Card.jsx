@@ -13,7 +13,9 @@ const Card = ({ values, handleClick, index }) => {
           <h5 className="text-xm">{profession}</h5>
           <button
             onClick={() => handleClick(index)}
-            className="mt-4 px-3 py-1 text-xs text-white bg-blue-500 font-semibold rounded-md "
+            className={`mt-4 px-3 py-1 text-xs text-white ${
+              friends ? "bg-green-500" : "bg-blue-500"
+            } font-semibold rounded-md `}
           >
             {friends === true ? "Friends" : "Add Friends"}
           </button>
