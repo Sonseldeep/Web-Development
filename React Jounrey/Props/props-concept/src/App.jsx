@@ -34,10 +34,10 @@ const App = () => {
   ];
 
   const [realdata, setRealData] = useState(data);
-  const handleFriendsButton = () => {
+  const handleFriendsButton = (cardindex) => {
     setRealData((prev) => {
-      prev.map((item, index) => {
-        if (index === 2) {
+      return prev.map((item, index) => {
+        if (index === cardindex) {
           return { ...item, friends: !item.friends };
         }
         return item;
@@ -50,7 +50,8 @@ const App = () => {
         {realdata.map((item, index) => (
           <Card
             key={index}
-            handleFriendsButton={handleFriendsButton}
+            index={index}
+            handleClick={handleFriendsButton}
             // image={item.image}
             // name={item.name}
             // profession={item.profession}
