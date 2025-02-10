@@ -1,0 +1,18 @@
+.a {
+  color: #fff;
+
+  font-weight: 800;
+  font-size: large;
+  font-family: sans-serif;
+  background-color: red;
+  padding: 10px 23px;
+  border-radius: 10px;
+  letter-spacing: 1.5;
+}
+
+.a:hover,
+.a:focus {
+  background-color: greenyellow;
+  color: #000;
+  font-style: italic;
+}

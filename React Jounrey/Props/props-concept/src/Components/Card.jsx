@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ values, handleClick, index }) => {
+const Card = ({ values, index, handleClick }) => {
   const { image, name, profession, friends } = values;
   return (
     <>
@@ -12,7 +12,9 @@ const Card = ({ values, handleClick, index }) => {
           <h3 className="text-xl font-semibold">{name}</h3>
           <h5 className="text-xm">{profession}</h5>
           <button
-            onClick={() => handleClick(index)}
+            onClick={() => {
+              handleClick(index);
+            }}
             className={`mt-4 px-3 py-1 text-xs text-white ${
               friends ? "bg-green-500" : "bg-blue-500"
             } font-semibold rounded-md `}

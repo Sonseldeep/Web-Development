@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "./Components/Card";
 
 const App = () => {
-  const data = [
+  const raw = [
     {
       name: "Sashank",
       profession: "Dramaist",
@@ -33,25 +33,38 @@ const App = () => {
     },
   ];
 
-  const [realdata, setRealData] = useState(data);
-  const handleFriendsButton = (cardindex) => {
-    setRealData((prev) => {
+  const [data, setData] = useState(raw);
+  const handleClick = (changingIndex) => {
+    setData((prev) => {
       return prev.map((item, index) => {
-        if (index === cardindex) {
+        if (index === changingIndex) {
           return { ...item, friends: !item.friends };
         }
         return item;
       });
     });
   };
+
+  // const [realdata, setRealData] = useState(data);
+  // const handleFriendsButton = (cardindex) => {
+  //   setRealData((prev) => {
+  //     return prev.map((item, index) => {
+  //       if (index === cardindex) {
+  //         return { ...item, friends: !item.friends };
+  //       }
+  //       return item;
+  //     });
+  //   });
+  // };
   return (
     <>
       <div className="w-full h-screen bg-zinc-300 flex gap-4 justify-center items-center">
-        {realdata.map((item, index) => (
+        {data.map((item, index) => (
           <Card
             key={index}
             index={index}
-            handleClick={handleFriendsButton}
+            handleClick={handleClick}
+            // handleClick={handleFriendsButton}
             // image={item.image}
             // name={item.name}
             // profession={item.profession}
