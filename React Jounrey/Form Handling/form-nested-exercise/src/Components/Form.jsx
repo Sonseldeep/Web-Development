@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 const Form = ({ handleFormSubmitData }) => {
   const { register, handleSubmit, reset } = useForm();
   const handleFormSubmit = (data) => {
-    handleFormSubmitData(data);
+    handleFormSubmitData( );
     reset();
   };
   return (
