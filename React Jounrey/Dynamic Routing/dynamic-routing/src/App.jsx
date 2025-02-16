@@ -1,7 +1,14 @@
 import React from "react";
 
+import Navbar from "./Components/Navbar";
+import Routing from "./utils/Routing";
 const App = () => {
-  return <div>App</div>;
+  return (
+    <>
+      <Navbar />
+      <Routing />
+    </>
+  );
 };
 
 export default App;
