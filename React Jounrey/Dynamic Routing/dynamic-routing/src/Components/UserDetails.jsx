@@ -4,7 +4,8 @@ const UserDetails = () => {
   const { name } = useParams();
   const navigate = useNavigate();
   const GoBackHandler = () => {
-    navigate("/user");
+    // navigate("/user");
+    navigate(-1);
   };
 
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 const User = () => {
   return (
     <div className=" w-1/2 m-auto mt-10 flex flex-col ">
@@ -22,6 +22,9 @@ const User = () => {
       >
         Hari
       </Link>
+
+      <hr />
+      <Outlet />
     </div>
   );
 };
