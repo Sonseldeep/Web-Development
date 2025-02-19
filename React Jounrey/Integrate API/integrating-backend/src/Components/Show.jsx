@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 const Show = () => {
@@ -12,20 +12,20 @@ const Show = () => {
       })
       .catch((err) => console.error(err));
   };
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <>
-      <button onClick={getProducts} className="px-5 by-2 bg-red-300 rounded">
-        Call Product API
-      </button>
       <hr />
       <div>
-        <ul>
+        <ul className="flex flex-wrap gap-4 mt-10 justify-center ">
           {products.length > 0 ? (
             products.map((p) => (
               <li
                 key={Math.random()}
-                className="w-1/4  mb-3 p-5 bg-red-200 rounded"
+                className="w-1/4  mb-3 p-5 bg-green-200 font-semibold rounded"
               >
                 {p.title}
               </li>
