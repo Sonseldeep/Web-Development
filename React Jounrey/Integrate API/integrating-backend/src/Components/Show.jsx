@@ -8,7 +8,6 @@ const Show = () => {
     axios
       .get(apt)
       .then((products) => {
-        console.log();
         setProducts(products.data);
       })
       .catch((err) => console.error(err));
