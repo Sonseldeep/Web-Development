@@ -1,10 +1,23 @@
 import React, { useEffect, useState } from "react";
-
+import axios from "../utils/axios";
 const Services = () => {
   const [first, setFirst] = useState("this is normla data");
   const [second, setSecond] = useState("this is very large data");
 
+  const getUser = () => {
+    // const api = "http://fakestoreapi.com/users";
+    axios
+      .get("api")
+      .then((users) => {
+        console.log(users);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   useEffect(() => {
+    getUser();
     console.log("Service Component is created");
 
     return () => {

@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import axios from "axios";
+import axios from "../utils/axios";
+
 const Show = () => {
   const [products, setProducts] = useState([]);
   const getProducts = () => {
-    const apt = "https://fakestoreapi.com/products";
+    // const apt = "/products";
     axios
-      .get(apt)
+      .get("/products")
       .then((products) => {
         setProducts(products.data);
       })
