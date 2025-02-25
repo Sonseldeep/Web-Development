@@ -134,3 +134,32 @@ a {
   height: 2rem;
   width: fit-content;
 }
+.btn-dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background-color: #121212;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 1rem;
+}
+.sticky-nav-icons {
+  margin: 0.75rem;
+}
+.sticky-nav-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .hide {
+    display: none;
+  }
+}
