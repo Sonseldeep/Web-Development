@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ProductContext } from "../utils/Context";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
+  const [products] = useContext(ProductContext);
+  let distinct_category =
+    products && products.reduce((acc, curr) => [...acc, curr.category], []);
+  distinct_category = [...new Set(distinct_category)];
+
+  const color = () => {
+    return `rgba(
+    ${(Math.random() * 255).toFixed()},
+    ${(Math.random() * 255).toFixed()},
+    ${(Math.random() * 255).toFixed()},
+ 0.4
+    )`;
+  };
+  console.log(color());
+
   return (
     <nav className="w-[15%] h-full bg-zinc-100 flex flex-col items-center pt-5">
       <a
@@ -11,21 +28,21 @@ const Nav = () => {
       </a>
       <hr className="w-[80%] my-3" />
       <h1 className="text-2xl w-[80%] mb-3">Category Filter</h1>
-      <ul className=" w-[80%]">
-        <li className=" mb-3 flex items-center">
-          <span className=" mr-2  h-[15px] w-[15px] rounded-full bg-blue-300"></span>
-          cat 1
-        </li>
-
-        <li className=" mb-3 flex items-center">
-          <span className=" mr-2  h-[15px] w-[15px] rounded-full bg-green-300"></span>
-          cat 2
-        </li>
-        <li className=" mb-3 flex items-center">
-          <span className=" mr-2  h-[15px] w-[15px] rounded-full bg-red-300"></span>
-          cat 3
-        </li>
-      </ul>
+      <div className=" w-[80%]">
+        {distinct_category.map((c, i) => (
+          <Link
+            key={i}
+            to={`/?category=${c}`}
+            className=" mb-3 flex items-center"
+          >
+            <span
+              style={{ backgroundColor: color() }}
+              className=" mr-2  h-[15px] w-[15px] rounded-full  "
+            ></span>
+            {c}
+          </Link>
+        ))}
+      </div>
     </nav>
   );
 };
