@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="./assets/logo.png" />
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="sidebar">
+        <div class="nav">
+          <div class="nav-option" style="opacity: 1">
+            <i class="fa-solid fa-house"></i>
+            <a href="#">Home</a>
+          </div>
+          <div class="nav-option">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="#">Search</a>
+          </div>
+        </div>
+        <div class="library">
+          <div class="options">
+            <div class="lib-option nav-option">
+              <img
+                class="lib-img"
+                src="./assets/library_icon.png"
+                alt="library icon image"
+              />
+              <a href="#">Your library</a>
+            </div>
+            <div class="icons">
+              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="boxes"></div>
+          <div class="box">
+            <p class="box-p1">Create your first playlist</p>
+            <p class="box-p2">It's easy,we'll help you</p>
+            <button class="btn-top">Create playlist</button>
+          </div>
+
+          <div class="box">
+            <p class="box-p1">Let's find some podcast to follow</p>
+            <p class="box-p2">We'll keep you updated on new eposides</p>
+            <button class="btn-top">Browse podcast</button>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="sticky-nav">
+          <div class="sticky-nav-icons">
+            <img src="./assets/backward_icon.png" alt="" />
+            <img class="hide" src="./assets/forward_icon.png" alt="" />
+          </div>
+          <div class="sticky-nav-options">
+            <button class="btn-top hide">Explore Premium</button>
+            <button class="btn-top btn-dark">
+              <i class="fa-solid fa-arrow-down" style="margin-right: 5px"></i>
+              Install App
+            </button>
+            <i class="fa-regular fa-user"></i>
+          </div>
+        </div>
+        <div class="cards">
+          <h2>Recently Played</h2>
+          <div class="cards-container">
+            <div class="card">
+              <img class="card-img" src="./assets/card1img.jpeg" alt="" />
+              <p class="card-title">Top 50 - Golbal</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+          </div>
+
+          <h2>Trending now near you</h2>
+          <div class="cards-container">
+            <div class="card">
+              <img class="card-img" src="./assets/card2img.jpeg" alt="" />
+              <p class="card-title">Top 50 - Golbal</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+
+            <div class="card">
+              <img class="card-img" src="./assets/card3img.jpeg" alt="" />
+              <p class="card-title">Top 50 - Golbal</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+
+            <div class="card">
+              <img class="card-img" src="./assets/card4img.jpeg" alt="" />
+              <p class="card-title">Top 50 - Golbal</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+
+            <div class="card">
+              <img class="card-img" src="./assets/card5img.jpeg" alt="" />
+              <p class="card-title">Top 50 - Golbal</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+
+            <div class="card">
+              <img class="card-img" src="./assets/card4img.jpeg" alt="" />
+              <p class="card-title">Top 50 - Golbal</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+
+            <div class="card">
+              <img class="card-img" src="./assets/card4img.jpeg" alt="" />
+              <p class="card-title">Top 50 - Golbal</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+
+            <div class="card">
+              <img class="card-img" src="./assets/card4img.jpeg" alt="" />
+              <p class="card-title">Top 50 - Golbal</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+          </div>
+
+          <h2>Featured Charts</h2>
+          <div class="cards-container">
+            <div class="card">
+              <img class="card-img" src="./assets/card4img.jpeg" alt="" />
+              <p class="card-title">NM READY</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+
+            <div class="card">
+              <img class="card-img" src="./assets/card5img.jpeg" alt="" />
+              <p class="card-title">Top Song Golbal</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+
+            <div class="card">
+              <img class="card-img" src="./assets/card6img.jpeg" alt="" />
+              <p class="card-title">Top Songs India</p>
+              <p class="card-info">Your daily updates of the most played...</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="line">
+            <div class="underline-text-wrapper">
+              <div class="underline-left-item">
+                <p>Legal</p>
+                <p>Safety & Privacy Policy</p>
+                <p>Cookies</p>
+                <p>About us</p>
+                <p>Accessibility</p>
+              </div>
+              <div class="underlineright-item">
+                <p>2025 Spotify AB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="music-player">
+        <div class="album"></div>
+        <div class="player">
+          <div class="player-controls">
+            <img
+              class="player-control-icons"
+              src="./assets/player_icon1.png"
+              alt=""
+            />
+            <img
+              class="player-control-icons"
+              src="./assets/player_icon2.png"
+              alt=""
+            />
+            <img
+              class="player-control-icons"
+              src="./assets/player_icon3.png"
+              alt=""
+              style="opacity: 1; height: 2rem"
+            />
+            <img
+              class="player-control-icons"
+              src="./assets/player_icon4.png"
+              alt=""
+            />
+            <img
+              class="player-control-icons"
+              src="./assets/player_icon5.png"
+              alt=""
+            />
+          </div>
+          <div class="playback-bar">
+            <span class="curr-time">00:00</span>
+            <input
+              class="progress-bar"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+            />
+            <span class="tot-time">3:33</span>
+          </div>
+        </div>
+        <div class="controls"></div>
+      </div>
+    </div>
+  </body>
+</html>
