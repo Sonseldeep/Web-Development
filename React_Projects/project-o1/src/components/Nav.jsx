@@ -16,7 +16,6 @@ const Nav = () => {
  0.4
     )`;
   };
-  console.log(color());
 
   return (
     <nav className="w-[15%] h-full bg-zinc-100 flex flex-col items-center pt-5">
@@ -28,6 +27,7 @@ const Nav = () => {
       </a>
       <hr className="w-[80%] my-3" />
       <h1 className="text-2xl w-[80%] mb-3">Category Filter</h1>
+
       <div className=" w-[80%]">
         {distinct_category.map((c, i) => (
           <Link
