@@ -7,8 +7,9 @@ import axios from "../utils/axios";
 
 const Home = () => {
   const [products] = useContext(ProductContext);
+
   const { search } = useLocation();
-  const category = search ? decodeURIComponent(search.split("=")[1]) : "";
+  const category = decodeURIComponent(search.split("=")[1]);
 
   const [filteredProducts, setFilteredProducts] = useState(null);
 
@@ -20,6 +21,7 @@ const Home = () => {
       console.error(err);
     }
   };
+
   useEffect(() => {
     if (category && category !== "undefined") {
       getProductsByCategory();
