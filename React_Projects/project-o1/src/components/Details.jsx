@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ProductContext } from "../utils/Context";
 import axios from "../utils/axios";
@@ -6,21 +6,25 @@ import Loading from "./Loading";
 
 const Details = () => {
   const { id } = useParams();
+  const [products, setProducts] = useContext(ProductContext);
 
   const [product, setproduct] = useState(null);
-  const getSingleProduct = async () => {
-    try {
-      const { data } = await axios.get(`/products/${id}`);
-      console.log(data);
-      setproduct(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // const getSingleProduct = async () => {
+  //   try {
+  //     const { data } = await axios.get(`/products/${id}`);
+  //     console.log(data);
+  //     setproduct(data);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   useEffect(() => {
-    getSingleProduct();
+    if (!product) {
+      setproduct(products.filter((p) => p.id == id)[0]);
+    }
   }, []);
+
   return product ? (
     <div className="w-[70%] h-full  m-auto p-[10%] flex items-center  gap-10 ">
       <img
