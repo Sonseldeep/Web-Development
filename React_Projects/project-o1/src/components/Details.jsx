@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ProductContext } from "../utils/Context";
 import axios from "../utils/axios";
 import Loading from "./Loading";
 
 const Details = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [products, setProducts] = useContext(ProductContext);
 
@@ -25,6 +26,13 @@ const Details = () => {
     }
   }, []);
 
+  const ProductDeleteHandler = (id) => {
+    const FilteredProducts = products.filter((p) => p.id !== id);
+    setProducts(FilteredProducts);
+    localStorage.setItem("products", JSON.stringify(FilteredProducts));
+    navigate("/");
+  };
+
   return product ? (
     <div className="w-[70%] h-full  m-auto p-[10%] flex items-center  gap-10 ">
       <img
@@ -37,12 +45,18 @@ const Details = () => {
         <h3 className="mt-3 text-zinc-400 font-semibold">{product.category}</h3>
         <h2 className="text-red-300 mt-3 font-semibold">Rs. {product.price}</h2>
         <p className="mt-3 font-semibold">{product.description}</p>
-        <Link className="mt-5 mr-5 py-2 inline-block px-5 border rounded border-blue-200 text-blue-300">
+        <Link
+          to={`/edit/${product.id}`}
+          className="mt-5 mr-5 py-2 inline-block px-5 border rounded border-blue-200 text-blue-300"
+        >
           Edit
         </Link>
-        <Link className=" inline-block  py-2 px-5 border rounded border-red-200 text-red-300">
+        <button
+          onClick={() => ProductDeleteHandler(product.id)}
+          className=" inline-block  py-2 px-5 border rounded border-red-200 text-red-300"
+        >
           Delete
-        </Link>
+        </button>
       </div>
     </div>
   ) : (
