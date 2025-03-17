@@ -13,19 +13,36 @@ const Trending = () => {
   const [duration, setDuration] = useState("day");
   const [trending, setTrending] = useState([]);
   const [page, setpage] = useState(1);
+  const [hasMore, sethasMore] = useState(true);
 
   const GetTrending = async () => {
     try {
-      const { data } = await axios.get(`/trending/${category}/${duration}`);
+      const { data } = await axios.get(
+        `/trending/${category}/${duration}?page=${page}`
+      );
 
-      setTrending((prevState) => [...prevState, ...data.results]);
-      setpage(page + 1);
+      if (data.results.length > 0) {
+        setpage(page + 1);
+        setTrending((prevState) => [...prevState, ...data.results]);
+      } else {
+        sethasMore(false);
+      }
     } catch (error) {
       console.log(error);
     }
   };
+  const refreshHandler = () => {
+    if (trending.length === 0) {
+      GetTrending();
+    } else {
+      setpage(1);
+      setTrending([]);
+      GetTrending();
+    }
+  };
+
   useEffect(() => {
-    GetTrending();
+    refreshHandler();
   }, [category, duration]);
 
   const navigate = useNavigate();
@@ -58,7 +75,7 @@ const Trending = () => {
         dataLength={trending.length}
         loader={<h1>Loading...</h1>}
         next={GetTrending()}
-        hasMore={true}
+        hasMore={hasMore}
       >
         <Cards data={trending} title={category} />
       </InfiniteScroll>
