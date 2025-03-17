@@ -6,16 +6,20 @@ import axios from "../utils/axios.jsx";
 import Topnav from "./partials/Topnav";
 import Cards from "./partials/Cards.jsx";
 import Loading from "./Loading.jsx";
+import InfiniteScroll from "react-infinite-scroll-component";
+
 const Trending = () => {
   const [category, setCategory] = useState("all");
   const [duration, setDuration] = useState("day");
-  const [trending, setTrending] = useState(null);
+  const [trending, setTrending] = useState([]);
+  const [page, setpage] = useState(1);
 
   const GetTrending = async () => {
     try {
       const { data } = await axios.get(`/trending/${category}/${duration}`);
 
-      setTrending(data.results);
+      setTrending((prevState) => [...prevState, ...data.results]);
+      setpage(page + 1);
     } catch (error) {
       console.log(error);
     }
@@ -25,9 +29,9 @@ const Trending = () => {
   }, [category, duration]);
 
   const navigate = useNavigate();
-  return trending ? (
-    <div className="w-screen h-screen overflow-hidden overflow-y-auto p-[3%]">
-      <div className=" w-full flex items-center justify-between">
+  return trending.length > 0 ? (
+    <div className="w-screen h-screen ">
+      <div className=" px-[5%] w-full flex items-center justify-between ">
         <h1 className="text-2xl text-zinc-400 font-semibold w-[20%]">
           <i
             onClick={() => navigate(-1)}
@@ -50,8 +54,14 @@ const Trending = () => {
           />
         </div>
       </div>
-
-      <Cards data={trending} title={category} />
+      <InfiniteScroll
+        dataLength={trending.length}
+        loader={<h1>Loading...</h1>}
+        next={GetTrending()}
+        hasMore={true}
+      >
+        <Cards data={trending} title={category} />
+      </InfiniteScroll>
     </div>
   ) : (
     <Loading />
