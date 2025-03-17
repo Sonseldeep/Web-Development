@@ -19,3 +19,44 @@ secondary : --  #6556CD
   background: #6556cd;
   border-radius: 10px;
 }
+
+.select {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.select select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.select select:hover {
+  border-color: #6556cd;
+}
+
+.select select:focus {
+  border-color: #6556cd;
+  background-color: #f0f0f0;
+  outline: none;
+}
+
+.select::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 12px;
+  color: #333;
+}

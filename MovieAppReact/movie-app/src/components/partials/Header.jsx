@@ -13,7 +13,7 @@ const Header = ({ data }) => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full h-[50vh] flex justify-end items-start flex-col p-[10%]"
+      className="w-full h-[50vh] flex justify-end items-start flex-col p-[5%]"
     >
       <h1 className="text-5xl font-black text-white w-[70%]">
         {data.original_title || data.name || data.title || data.original_name}
@@ -23,9 +23,10 @@ const Header = ({ data }) => {
         ...<Link className="text-blue-400">more</Link>
       </p>
       <p className="text-white  flex gap-3 mt-3">
-        <i className="ri-megaphone-fill"></i>{" "}
-        {data.release_date || data.first_air_date}
-        <i className="ri-album-fill"></i> {data.media_type.toUpperCase()}
+        <i className="ri-megaphone-fill  text-amber-400"></i>{" "}
+        {data.release_date || data.first_air_date || "No Information"}
+        <i className="ri-album-fill text-amber-400"></i>{" "}
+        {data.media_type.toUpperCase()}
       </p>
 
       <Link className="p-4 rounded  mt-5 font-semibold text-white  bg-[#6556CD]">
