@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "./partials/Dropdown.jsx";
 import axios from "../utils/axios.jsx";
@@ -9,6 +9,7 @@ import Loading from "./Loading.jsx";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const Trending = () => {
+  document.title = "Trending ";
   const [category, setCategory] = useState("all");
   const [duration, setDuration] = useState("day");
   const [trending, setTrending] = useState([]);
